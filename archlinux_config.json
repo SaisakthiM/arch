@@ -1,0 +1,43 @@
+{
+  "profile": "desktop",
+  "hostname": "saisakthi-pc",
+  "bootloader": "grub-install",
+  "device": "/dev/sda",
+  "filesystem": {
+    "type": "btrfs",
+    "layout": "default"
+  },
+  "swap": {
+    "type": "file",
+    "size": "2GB"
+  },
+  "users": [
+    {
+      "username": "saisakthi",
+      "password": "archsai2008",
+      "is_admin": true
+    }
+  ],
+  "timezone": "auto",
+  "desktop-environment": "plasma",
+  "additional-packages": [
+    "code",
+    "snapper",
+    "btrfs-progs",
+    "grub-btrfs",
+    "plasma-meta",
+    "konsole",
+    "dolphin",
+    "xterm"
+  ],
+  "mirror-region": {
+    "continent": "Asia",
+    "country": "India"
+  },
+  "network-configuration": {
+    "method": "NetworkManager"
+  },
+  "bootloader-options": {
+    "install": true
+  }
+}
