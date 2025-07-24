@@ -1,0 +1,79 @@
+{
+  "version": "2.6.1",
+  "disk_encryption": {
+    "enabled": false
+  },
+  "bootloader": "grub-install",
+  "hostname": "arch-vm",
+  "kernels": [
+    "linux"
+  ],
+  "locale": {
+    "language": "en_US",
+    "encoding": "UTF-8",
+    "timezone": "Asia/Kolkata",
+    "keymap": "us"
+  },
+  "mirror-region": {
+    "use-custom-mirrors": false,
+    "country-mirror": "India"
+  },
+  "network_configuration": {
+    "type": "systemd-networkd"
+  },
+  "root-password": {
+    "type": "password",
+    "value": "arch123"
+  },
+  "user-account": {
+    "create-user": true,
+    "username": "sai",
+    "password": {
+      "type": "password",
+      "value": "sai123"
+    },
+    "superuser": true
+  },
+  "profile": "desktop",
+  "desktop-environment": "plasma",
+  "audio": "pipewire",
+  "display": "xorg",
+  "additional-packages": [
+    "nano",
+    "vim",
+    "wget",
+    "curl",
+    "git",
+    "networkmanager",
+    "plasma-meta",
+    "konsole",
+    "sddm",
+    "firefox",
+    "xterm",
+    "neofetch",
+    "ttf-dejavu",
+    "sudo",
+    "archlinux-keyring",
+    "reflector",
+    "inetutils",
+    "noto-fonts",
+    "noto-fonts-cjk",
+    "noto-fonts-emoji",
+    "open-vm-tools",
+    "xf86-video-vmware",
+    "mesa",
+    "xorg-xinit",
+    "xdg-utils"
+  ],
+  "harddrive": "/dev/sda",
+  "filesystem": "btrfs",
+  "btrfs-subvolumes": {
+    "enabled": true,
+    "subvolumes": {
+      "@": "/",
+      "@home": "/home",
+      "@log": "/var/log",
+      "@pkg": "/var/cache/pacman/pkg"
+    }
+  }
+}
