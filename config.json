@@ -1,79 +1,68 @@
-{
-  "version": "2.6.1",
-  "disk_encryption": {
-    "enabled": false
-  },
-  "bootloader": "grub-install",
-  "hostname": "arch-vm",
-  "kernels": [
-    "linux"
-  ],
-  "locale": {
-    "language": "en_US",
-    "encoding": "UTF-8",
-    "timezone": "Asia/Kolkata",
-    "keymap": "us"
-  },
-  "mirror-region": {
-    "use-custom-mirrors": false,
-    "country-mirror": "India"
-  },
-  "network_configuration": {
-    "type": "systemd-networkd"
-  },
-  "root-password": {
-    "type": "password",
-    "value": "arch123"
-  },
-  "user-account": {
-    "create-user": true,
-    "username": "sai",
-    "password": {
-      "type": "password",
-      "value": "sai123"
-    },
-    "superuser": true
-  },
-  "profile": "desktop",
-  "desktop-environment": "plasma",
-  "audio": "pipewire",
-  "display": "xorg",
-  "additional-packages": [
-    "nano",
-    "vim",
-    "wget",
-    "curl",
-    "git",
-    "networkmanager",
-    "plasma-meta",
-    "konsole",
-    "sddm",
-    "firefox",
-    "xterm",
-    "neofetch",
-    "ttf-dejavu",
-    "sudo",
-    "archlinux-keyring",
-    "reflector",
-    "inetutils",
-    "noto-fonts",
-    "noto-fonts-cjk",
-    "noto-fonts-emoji",
-    "open-vm-tools",
-    "xf86-video-vmware",
-    "mesa",
-    "xorg-xinit",
-    "xdg-utils"
-  ],
-  "harddrive": "/dev/sda",
-  "filesystem": "btrfs",
-  "btrfs-subvolumes": {
-    "enabled": true,
-    "subvolumes": {
-      "@": "/",
-      "@home": "/home",
-      "@log": "/var/log",
-      "@pkg": "/var/cache/pacman/pkg"
-    }
-  }
-}
+# Hyprland Config - Customized for Sai
+
+# Set the mod key to Super (Windows key)
+mod = SUPER
+
+# Terminal emulator to launch
+terminal = kitty
+
+# Keybindings
+bind = SUPER+RETURN, exec, kitty                       # Open terminal
+bind = SUPER+Q, killactive                            # Close focused window
+bind = SUPER+W, exec, google-chrome-stable            # Open Google Chrome
+bind = SUPER+V, exec, code                             # Open VS Code
+bind = SUPER+E, exec, thunar                           # Open file manager (install if needed)
+bind = SUPER+TAB, dispatch, workspace_next             # Switch to next workspace
+bind = SUPER+SHIFT+TAB, dispatch, workspace_prev       # Switch to previous workspace
+bind = SUPER+R, exec, rofi -show run                   # Run launcher (install rofi)
+bind = SUPER+SHIFT+R, reload                            # Reload config
+
+# Workspace configuration
+workspace = 1, name: "Web"
+workspace = 2, name: "Code"
+workspace = 3, name: "Chat"
+workspace = 4, name: "Media"
+
+# Assign applications to workspaces (optional)
+workspace_assign = Google-chrome, 1
+workspace_assign = code, 2
+workspace_assign = Discord, 3
+
+# Window rules (example: floating windows)
+windowrule = float, title:"Calculator"
+
+# Wallpaper (change the path to your wallpaper)
+exec-once = swaybg -i ~/Pictures/wallpaper.jpg -m fill
+
+# Enable vsync for smooth rendering
+vsync = 1
+
+# Border style
+border_size = 2
+border_color_active = 0xff64c4eb
+border_color_inactive = 0xff444444
+
+# Gaps between windows
+gaps_in = 10
+gaps_out = 15
+
+# Enable workspace animations
+animation_duration = 200
+
+# Cursor settings
+cursor_hide_timeout = 3000
+
+# Autostart applications
+exec-once = nm-applet                             # Network Manager applet
+exec-once = pasystray                            # Audio tray
+exec-once = pipewire                            # Audio server (if used)
+
+# Autostart Chrome and VS Code maximized
+exec-once = google-chrome-stable --start-maximized
+exec-once = code --no-sandbox
+
+# Font for UI (adjust to your preference)
+font = "Sans 10"
+
+# Misc settings
+swallowing = 1                                  # Enable swallowing of terminal windows
